@@ -156,3 +156,52 @@ int main() {
     }
     return 0;
 }
+//deque same as both but better
+
+// list
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    deque<int> dq(5,90);
+    dq.push_back(40);
+    dq.push_front(50);
+    dq.emplace_front(60);
+    dq.emplace_back(40);
+    for(auto oops:dq){
+        cout<<oops<<" ";
+    }
+    cout<<endl;
+    dq.pop_back();
+    dq.pop_front();
+  cout<<  dq.front();
+    cout<< dq.back();
+    for(auto oops:dq){
+        cout<<oops<<" ";
+    }
+    return 0;
+}
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+//big o(1)
+int main(){
+    
+    stack<int> st;
+    st.push(3);
+    st.push(4);
+    st.push(6);
+    
+    st.pop();
+    
+    cout<<st.top()<<" ";
+    cout<<endl;
+    cout<<st.size()<<" ";
+    cout<<endl;
+    cout<<st.empty()<<"";
+    stack<int>
+    
+    
+    return 0;
+}
