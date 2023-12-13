@@ -335,3 +335,84 @@ int main() {
 }
 //unordered_set not sorted not unique
 //unordered_set<int> st;
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    //map is used for saving key-value pairs in sorted order keys are unique 
+    map <int, int> mpp;
+    mpp[1]=2;
+    mpp.emplace({3,5});
+    mpp.insert({4,6})
+    
+    map<int, pair<int, int>> mpp;
+    map<pair<int,int>, int> mpp;
+    mpp[{3,6}]=18;
+
+    for(auto it :mpp){
+        cout<<it.first<<" "<<it.second<<" ";
+        
+    }
+    
+    cout<<mpp[1];
+    cout<<mpp[5];
+    
+    auto it = mpp.find(5);
+    cout<<*(it).second;
+    
+    auto it1 = mpp.lower_bound(6);
+    auto it2 = mpp.upper_bound(9);
+    
+    //multimap dont have unique key multiple key can save 
+    //unordered map not even sorted 
+    
+    
+    
+    //now we will talk about 4 imp algorithms
+    //sort is used for sorting
+    //builtinpopcount
+    //permutation
+    //max_element and min_element to check min and max element
+    
+    
+    //sort ka basic formula
+    sort(a, a+n);
+    sort(v.begin(), v.end())// sort in vector
+    sort(a,a+n,greater<int>)//sort in descending order
+    
+    //example {3,4,8,2} agar i want to sort last ke 2 digits 
+    sort(a+2,a+4)
+    
+    pair<int,int> a[]={{1,2},{2,1},{4,1}
+    //basically if i want to sort on basis of my own way example i want to sort on basis of second digit and if second digits are same i will sort in descending order
+    sort(a,a+n,comp)//comp is my sorting boolean function
+    
+    bool comp(pair<int,int> p1, pair<int,int>p2){
+        if(p2.second > p1.second) return true;
+        if(p1.second > p2.second) return false;
+        if (p1.first > p2.first) return true;
+        return false;
+    }
+        //ans will be {{4,1},{2,1},{1,2}}
+        
+        int num = 7; //in binary will be 111
+        int cnt = __builtinpop_count();//will check no of set bits means no of 1 in 7 it will be 3 and 6 will be 
+        
+        
+         long long num = 676858494794;
+         int cnt = __builtinpop_countll();//for long long kyu int itna zyada nhi karpayga
+         
+         string s ="123" //no hamesha in ascending order
+         // agar string ascending order main na ho toh sort use karlena 
+         //sort(s.begin(),s.end());
+            do{
+                cout<<s<<endl;
+            }while(next_permutaion(s.begin(),s.end()));
+            //iske saare permutation nikalega
+    
+    
+    int max = *max_element(a,a+n);
+    int min = *min_element(a,a+n);
+    return 0;
+}
