@@ -132,3 +132,27 @@ int main() {
         cout<<del.empty();//check karega khali hai kya?
     return 0;
 }
+
+
+//list same shit as vector just difference is theris push_front and emplace_front it has better time complexity then vector 
+
+// list
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    list<int> ls(5,90);
+    ls.push_back(40);
+    ls.push_front(50);
+    ls.emplace_front(60);
+    list<int> ds(9,27);
+    ls.swap(ds);
+    for(auto oops:ls){
+        cout<<oops<<" ";
+    }
+    cout<<endl;
+    for(auto oops:ds){
+        cout<<oops<<" ";
+    }
+    return 0;
+}
