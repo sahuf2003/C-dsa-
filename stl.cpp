@@ -181,7 +181,7 @@ int main() {
     }
     return 0;
 }
-
+//lifo is stack
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
@@ -200,8 +200,138 @@ int main(){
     cout<<st.size()<<" ";
     cout<<endl;
     cout<<st.empty()<<"";
-    stack<int>
+        stack<int> s1;
+    s1.swap(st);
+    
+    cout<<s1.empty()<<" "<<s1.top();
     
     
     return 0;
 }
+
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+//big o(1)
+int main(){
+    
+    queue<int> q;
+    q.push(9);
+    q.push(23);
+    q.push(11);
+    q.back()+=5;
+    
+    cout<<q.back()<<" ";
+    
+    q.pop();
+    
+    cout<<q.front()<<" ";
+    cout<<q.empty();
+    //size swap same as stack
+    return 0;
+}
+
+//priority queue
+
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+//push pop = logn
+//top o(1)
+int main(){
+    //largest will always be at top
+    //max heap
+    priority_queue <int> pq;
+    pq.push(8);
+    pq.emplace(9);
+    pq.push(3);
+    
+    cout<<pq.top()<<" ";
+    pq.pop();//will remove top value
+    cout<<pq.top()<<" ";
+    
+    
+    priority_queue<int, vector<int>, greater<int>> qp;
+    //smaller will be at top
+    //min heap
+    qp.push(1);
+    qp.push(2);
+    qp.emplace(9);
+    
+    cout<<qp.top()<<" ";
+    qp.pop();
+    cout<<qp.top()<<" ";
+    
+    //size swap same as stack
+    return 0;
+}
+
+
+//set is in sorted order and unique
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+//logn  complexity
+int main(){
+    set<int> st;
+    st.insert(1);
+    st.insert(3);
+    st.insert(3);
+    st.insert(4);
+    //same as vector begin end swap size
+    cout<<st.count(3)<<" ";
+    cout<<st.count(2)<<" ";
+    
+    auto it = st.find(3);
+    // auto it = st.find(2);//it will give next after 4 ki location
+    
+    
+    st.erase(1);
+    
+    cout<<st.count(1);
+    st.erase(it);
+    
+    auto it1 = st.find(2);
+    auto it2 = st.find(4);
+    
+    st.erase(it1,it2);
+    
+    auto it3 = lower_bound(3);
+    auto it4 = upper_bound(3)
+    
+    
+}
+
+//multiset
+#include <iostream>
+#include <set> // Include the necessary header file for using multiset
+using namespace std;
+
+int main() {
+    multiset<int> st;
+    st.insert(1);
+    st.insert(3);
+    st.insert(3);
+    st.insert(2);
+    st.insert(2);
+    st.insert(2);
+
+    cout << st.count(3) << " ";
+    st.erase(3); // Delete all occurrences of value 3
+    cout << st.count(3) << " ";
+
+    auto it = st.find(2);
+    st.erase(it); // Erase one occurrence of value 2
+    cout << st.count(2) << " ";
+
+    it = st.find(2);
+    st.erase(it, next(it, 1)); // Erase one occurrence of value 2 using iterators
+    cout << st.count(2) << " ";
+
+    return 0;
+}
+//unordered_set not sorted not unique
+//unordered_set<int> st;
