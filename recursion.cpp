@@ -238,3 +238,167 @@ int main(){
     cin>>s;
     cout<<f(0,s);
 }
+//using multiple recursion example fibonacci
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int fib(int n)
+{
+    if(n<=1) return 1;
+    int last = fib(n-1);
+    int slast = fib(n-2);
+    return last + slast;
+}
+int main() {
+    // Write C++ code here
+    int n;
+    cin>>n;
+    cout<<fib(n);
+    cout << "Hello world!";
+
+    return 0;
+}
+
+// print 1 to n
+vector<int> printNos(int x) {
+  if (x == 0){
+      return{};
+  }
+
+  vector<int> v = printNos(x-1);
+    v.push_back(x);
+
+    return v;
+}
+
+//print line n times
+
+vector<string> printNTimes(int n) {
+	if(n==0){
+		return{};
+	}
+
+	vector<string> v = printNTimes(n-1);
+	v.push_back("Coding Ninjas");
+
+return v;
+}
+
+//print n to 1
+vector<int> printNos(int x) {
+   static int n= x;
+    if(x==0) return{};
+
+    vector<int> v = printNos(x-1);
+    v.push_back(n-x+1);
+return v;
+}
+
+//sum of n numbers
+long long sumFirstN(long long n) {
+    if(n ==0) return 0;
+    int sum = n + sumFirstN(n-1);
+    return sum;
+}
+
+//factorial
+long long fact(long long n) {
+
+if(n == 0) return 1;
+
+return n * fact(n-1);
+
+}
+
+ 
+
+vector<long long> factorialNumbers(long long n) {
+
+vector<long long> result;
+
+for(long long i = 1; i <= n; i++) {
+
+long long f = fact(i);
+
+if (f <= n) {
+
+result.emplace_back(f);
+
+} else {
+
+break;
+
+}
+
+}
+
+return result;
+
+}
+
+//reverse an array
+vector<int> reverseArray(int n, vector<int> &nums)
+{
+   static int x =n;
+    static int count = 0;
+
+    if(count != x/2){
+        int temp = nums[x-n];
+        nums[x-n] = nums[n-1];
+        nums[n-1] = temp;
+        count++;
+        reverseArray(n-1,nums);
+    }
+    return nums;
+
+}
+//palindrome leetcode
+class Solution {
+public:
+
+    bool rev(int i, vector<char>&str){
+        if(i>=str.size()/2) return true;
+        if (str[i] == str[str.size() - i -1]) {
+            return rev(i+1,str);
+        }else{
+            return false;
+        }
+    }
+    bool isPalindrome(string s){
+        vector<char>str;
+        
+        for(auto &i :s){
+            i = tolower(i);
+            if(ispunct(i) or i==' '){
+                continue;
+            }
+            str.push_back(i);
+        }
+        return rev(0,str);
+}
+};
+
+//fibonacci leetcode
+class Solution {
+public:
+    int fib(int n) {
+        if(n==0) return 0;
+        if(n==1) return 1;
+        int ans = fib(n-1) + fib(n-2);
+        return ans; 
+
+        
+    }
+};
+
+//fiboonaccci coding ninja
+vector<int> generateFibonacciNumbers(int n) {
+    vector<int>ans;
+    if(n==1) return {0};
+    if(n==2) return {0,1};
+    ans = generateFibonacciNumbers(n-1);
+    ans.emplace_back(ans[n-2]+ans[n-3]);
+    return ans;
+    
+    
+}
