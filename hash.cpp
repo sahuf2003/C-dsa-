@@ -150,3 +150,29 @@ int main(){
     for(int i=0;i<n;i++) cout<<arr[i]<<" ";
     return 0;
 }
+
+//selection sort
+void selectionSort(vector<int>&arr) {
+for(int i =0; i<=arr.size()-2;i++){
+    int mini = i;
+    for(int j=i;j<=arr.size()-1; j++){
+        if(arr[j]< arr[mini]) mini = j;
+    }
+    int temp = arr[mini];
+    arr[mini] = arr[i];
+    arr[i] = temp;
+}
+}
+void bubbleSort(int arr[], int n) 
+{
+    for(int i =n-1;i<=0;i--){
+        for(int j=0;j<n-i-1;j++){
+            if(arr[j] > arr[j+1]){
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+
+    }
+}
